@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    
+    <!--datatables-->
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    <script type="text/javascript" src="DataTables/datatables.min.js"></script>
+
+    <!--my pages-->
+    <link rel="stylesheet" type="text/css" href="assets/mystyle.css">
+    <script src="jspage.js"></script>
+
+   
+
+
+</head>
+
+<body>
+    <div class="header">
+        <img alt="logo" class="imgalign" src="assets/img/keclogo.png">
+        <h1>Student Management System</h1>
+
+    </div>
+    <div class="container-fluid">
+
+
+        <!--Modals-->
+
+        <button type="button" id="addButton" data-toggle="modal" data-target="#mymodal"
+            class="btn btn-primary btn-lg">Add </button>
+        <div id="mymodal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="theform">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Add Employee</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="name" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Adress</label>
+                                <input type="text" id="address" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="email" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact No</label>
+                                <input type="text" id="contactno" class="form-control" value="" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                            <input type="button" class="btn btn-success" id="addBtn" onclick="addDataToTable()"
+                                value="Submit">
+
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--Modal end-->
+
+
+
+        <!--DATA Table-->
+        <table id="myTable" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Email</th>
+                    <th>Contact no</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+        <!--EditForm-->
+        <div id="editmodal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form id="theform">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Edit Information</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="editname" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Adress</label>
+                                <input type="text" id="editaddress" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" id="editemail" class="form-control" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact No</label>
+                                <input type="text" id="editcontactno" class="form-control" value="" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+
+                            <input type="button" class="btn btn-success" id="update" value="Update" name="Update" />
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+        <div class="footer">
+            <p>@copyright</p>
+        </div>
+</body>
+
+</html>
